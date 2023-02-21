@@ -9,7 +9,9 @@ import java.nio.file.Paths;
 public class DatabasePopulateService {
     public static void main(String[] args) {
         Database database = Database.getInstance();
-        new DatabaseQueryService().findYoungestEldestWorkers(database);
+        new DatabasePopulateService().addToDb(database);
+        new DatabaseQueryService().findYoungestEldestWorkers();
+        database.close();
 
     }
     public void addToDb(Database database){

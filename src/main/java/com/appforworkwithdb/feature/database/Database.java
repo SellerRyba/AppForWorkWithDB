@@ -29,7 +29,7 @@ public class Database {
     }
 
     public int executeUpdate(String sql) {
-        try (Statement st = connection.createStatement();) {
+        try (Statement st = connection.createStatement()) {
             return st.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,10 +38,12 @@ public class Database {
     }
 
     public void close() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

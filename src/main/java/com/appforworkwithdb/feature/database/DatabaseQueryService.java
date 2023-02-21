@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseQueryService {
-    public List<RequestForLongestProject> findLongestProject(Database database) {
+    public List<RequestForLongestProject> findLongestProject() {
         List<RequestForLongestProject> projectList = new ArrayList<>();
         try {
             String findProject = new Prefs().getString(Prefs.FIND_LONGEST_PROJECT_FILE_PATH);
@@ -42,7 +42,7 @@ public class DatabaseQueryService {
         return projectList;
     }
 
-    public List<RequestForMaxProjectsClient> findMaxProjectsClient(Database database) {
+    public List<RequestForMaxProjectsClient> findMaxProjectsClient() {
         List<RequestForMaxProjectsClient> projectsClients = new ArrayList<>();
         try {
             String findClientProject = new Prefs().getString(Prefs.FIND_MAX_PROJECTS_CLIENT_FILE_PATH);
@@ -66,7 +66,7 @@ public class DatabaseQueryService {
         return projectsClients;
     }
 
-    public List<RequestForMaxSalaryWorker> findMaxSalaryWorker(Database database) {
+    public List<RequestForMaxSalaryWorker> findMaxSalaryWorker() {
         List<RequestForMaxSalaryWorker> salaryWorkers = new ArrayList<>();
         try {
             String findMaxSalary = new Prefs().getString(Prefs.FIND_MAX_SALARY_WORKER_FILE_PATH);
@@ -90,7 +90,7 @@ public class DatabaseQueryService {
         return salaryWorkers;
     }
 
-    public List<RequestForYoungestEldestWorkers> findYoungestEldestWorkers(Database database) {
+    public List<RequestForYoungestEldestWorkers> findYoungestEldestWorkers() {
         List<RequestForYoungestEldestWorkers> eldestWorkers = new ArrayList<>();
         try {
             String youngestEldest = new Prefs().getString(Prefs.FIND_YOUNGEST_ELDEST_WORKERS_FILE_PATH);
